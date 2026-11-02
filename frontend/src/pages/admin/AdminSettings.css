@@ -1,0 +1,407 @@
+.admin-settings-page {
+  width: 100%;
+  max-width: 1400px;
+  color: #172033;
+}
+
+.admin-page-header {
+  margin-bottom: 24px;
+}
+
+.admin-page-eyebrow {
+  display: block;
+  margin-bottom: 6px;
+  color: #71819a;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.admin-page-header h1 {
+  margin: 0;
+  color: #14213a;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.admin-page-header p {
+  margin: 8px 0 0;
+  color: #71809a;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* FEEDBACK */
+
+.admin-settings-feedback {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 16px;
+  padding: 11px 14px;
+  border: 1px solid #d8e6f7;
+  border-radius: 9px;
+  background: #f4f9ff;
+  color: #416487;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.admin-settings-feedback i {
+  color: #299263;
+}
+
+/* GRID */
+
+.admin-settings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* CARD */
+
+.admin-settings-card {
+  min-width: 0;
+  padding: 22px 24px 24px;
+  border: 1px solid #dfe7f1;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 5px 20px rgba(32, 51, 78, 0.05);
+}
+
+.admin-settings-system-card {
+  grid-column: 1 / -1;
+}
+
+.admin-settings-notifications-card {
+  grid-column: 1 / -1;
+}
+
+/* SECTION HEADING */
+
+.admin-settings-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #edf1f6;
+}
+
+.admin-settings-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #eaf2ff;
+  color: #3278e5;
+  font-size: 13px;
+}
+
+.admin-settings-icon-green {
+  background: #edf8f2;
+  color: #299263;
+}
+
+.admin-settings-icon-purple {
+  background: #f2efff;
+  color: #765bd6;
+}
+
+.admin-settings-section-heading h2 {
+  margin: 0;
+  color: #273a55;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 15px;
+}
+
+.admin-settings-section-heading p {
+  margin: 4px 0 0;
+  color: #8996a9;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* APPEARANCE */
+
+.admin-settings-options {
+  margin-top: 2px;
+}
+
+.admin-setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 0;
+}
+
+.admin-setting-row + .admin-setting-row {
+  border-top: 1px solid #edf1f6;
+}
+
+.admin-setting-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.admin-setting-content strong {
+  display: block;
+  color: #40536e;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.admin-setting-content span {
+  display: block;
+  max-width: 470px;
+  margin-top: 4px;
+  color: #8997aa;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* SEGMENTED CONTROL */
+
+.admin-segmented-control {
+  display: flex;
+  flex-shrink: 0;
+  padding: 3px;
+  border: 1px solid #dce5ef;
+  border-radius: 9px;
+  background: #f7f9fc;
+}
+
+.admin-segmented-control button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 31px;
+  padding: 0 9px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #7b8aa0;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.admin-segmented-control button:hover {
+  color: #3e5877;
+}
+
+.admin-segmented-control button.active {
+  background: #ffffff;
+  color: #3278e5;
+  box-shadow: 0 2px 6px rgba(32, 51, 78, 0.08);
+}
+
+/* Coming Soon SETTINGS */
+
+.admin-settings-service-list {
+  margin-top: 2px;
+}
+
+.admin-settings-notifications-card .admin-settings-service-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 18px;
+}
+
+.admin-settings-notifications-card
+  .admin-setting-service-row {
+  min-width: 0;
+  padding: 15px 0;
+}
+
+.admin-settings-notifications-card
+  .admin-setting-service-row
+  + .admin-setting-service-row {
+  border-top: 0;
+}
+
+.admin-setting-service-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 0;
+}
+
+.admin-setting-service-row + .admin-setting-service-row {
+  border-top: 1px solid #edf1f6;
+}
+
+.admin-setting-service-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: #f4f7fb;
+  color: #70839e;
+  font-size: 11px;
+}
+
+.admin-setting-service-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.admin-setting-service-content strong {
+  display: block;
+  color: #40536e;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.admin-setting-service-content span {
+  display: block;
+  margin-top: 3px;
+  color: #8997aa;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.admin-setting-status {
+  flex-shrink: 0;
+  padding: 6px 9px;
+  border: 1px solid #dce5ef;
+  border-radius: 7px;
+  background: #f8fafc;
+  color: #718199;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+/* SYSTEM INFORMATION */
+
+.admin-system-information {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.admin-system-info-item {
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid #e4eaf2;
+  border-radius: 9px;
+  background: #f9fbfd;
+}
+
+.admin-system-info-item span {
+  display: block;
+  color: #8997aa;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.admin-system-info-item strong {
+  display: block;
+  margin-top: 5px;
+  overflow: hidden;
+  color: #40536e;
+  font-size: 11px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ACCESSIBILITY */
+
+.admin-segmented-control button:focus-visible {
+  outline: 3px solid rgba(50, 120, 229, 0.2);
+  outline-offset: 2px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 950px) {
+  .admin-settings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-settings-system-card {
+    grid-column: auto;
+  }
+
+  .admin-system-information {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .admin-settings-card {
+    padding: 20px;
+  }
+
+    .admin-settings-notifications-card
+    .admin-settings-service-list {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-settings-notifications-card
+    .admin-setting-service-row
+    + .admin-setting-service-row {
+    border-top: 1px solid #edf1f6;
+  }
+
+  .admin-setting-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-segmented-control {
+    width: 100%;
+  }
+
+  .admin-segmented-control button {
+    flex: 1;
+  }
+
+  .admin-setting-service-row {
+    align-items: flex-start;
+  }
+
+  .admin-setting-status {
+    margin-left: auto;
+  }
+
+  .admin-system-information {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-page-header h1 {
+    font-size: 27px;
+  }
+
+  .admin-setting-service-row {
+    flex-wrap: wrap;
+  }
+
+  .admin-setting-service-content {
+    flex-basis: calc(100% - 50px);
+  }
+
+  .admin-setting-status {
+    margin-left: 48px;
+  }
+}

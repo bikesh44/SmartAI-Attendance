@@ -1,0 +1,557 @@
+/* =========================================================
+   STUDENT PORTAL LAYOUT & MODERN SIDEBAR STYLES
+   Smart Attendance Management System (SAMS-FR)
+   ========================================================= */
+
+.student-layout {
+  min-height: 100vh;
+  display: flex;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+/* =========================================================
+   1. SIDEBAR (Modern Dark Navy / Blue Gradient)
+   ========================================================= */
+
+.student-sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 100;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #071329 0%, #0a1836 55%, #050f24 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Subtle corner lighting effect */
+.student-sidebar::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle at 100% 100%, rgba(30, 96, 240, 0.16) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* =========================================================
+   2. BRANDING SECTION
+   ========================================================= */
+
+.student-brand {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  position: relative;
+  z-index: 1;
+}
+
+.student-brand-icon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #1b63f2;
+  color: #ffffff;
+  font-size: 17px;
+  box-shadow: 0 4px 14px rgba(27, 99, 242, 0.4);
+  flex-shrink: 0;
+}
+
+.student-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.student-brand-name {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 1.2;
+}
+
+.student-brand-role {
+  color: #7b93b8;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+/* =========================================================
+   3. NAVIGATION
+   ========================================================= */
+
+.student-navigation {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px 14px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Custom subtle scrollbar */
+.student-navigation::-webkit-scrollbar {
+  width: 4px;
+}
+
+.student-navigation::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.student-navigation-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-navigation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Navigation Item */
+.student-nav-link {
+  position: relative;
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 0 14px;
+  border-radius: 8px;
+  color: #8da2c4;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.16s ease, color 0.16s ease;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.student-nav-icon {
+  width: 16px;
+  min-width: 16px;
+  font-size: 15px;
+  color: #8da2c4;
+  transition: color 0.16s ease;
+}
+
+.student-nav-label {
+  flex: 1;
+  white-space: nowrap;
+}
+
+/* Inactive Item Hover */
+.student-nav-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+.student-nav-link:hover .student-nav-icon {
+  color: #ffffff;
+}
+
+/* Active Top-level Navigation Item */
+.student-nav-link-active {
+  background: #175ce6;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(23, 92, 230, 0.35);
+}
+
+.student-nav-link-active .student-nav-icon {
+  color: #ffffff;
+}
+
+/* Parent Group Button */
+.student-nav-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-nav-group-btn {
+  justify-content: flex-start;
+  font-family: inherit;
+}
+
+.student-nav-group-active {
+  background: rgba(27, 99, 242, 0.16);
+  color: #ffffff;
+}
+
+.student-nav-group-active .student-nav-icon {
+  color: #60a5fa;
+}
+
+.student-nav-chevron {
+  font-size: 11px;
+  color: #7b93b8;
+  margin-left: auto;
+  transition: transform 0.18s ease;
+}
+
+.student-nav-chevron-muted {
+  font-size: 11px;
+  color: #7b93b8;
+  margin-left: auto;
+}
+
+/* =========================================================
+   4. TREE SUB-NAVIGATION (Matching Reference UI)
+   ========================================================= */
+
+.student-nav-tree-wrap {
+  position: relative;
+  margin: 4px 0 6px 0;
+  padding-left: 10px;
+}
+
+/* Vertical Branch Connector Line */
+.student-tree-line {
+  position: absolute;
+  left: 21px;
+  top: 8px;
+  bottom: 20px;
+  width: 2px;
+  background: #1e3a6a;
+  border-radius: 1px;
+  z-index: 1;
+}
+
+.student-nav-sublist {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: 18px;
+}
+
+/* Sub-nav Item */
+.student-subnav-link {
+  position: relative;
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 0 12px;
+  border-radius: 8px;
+  color: #8da2c4;
+  text-decoration: none;
+  font-size: 12.5px;
+  font-weight: 500;
+  transition: all 0.16s ease;
+  box-sizing: border-box;
+}
+
+.student-subnav-icon {
+  width: 14px;
+  min-width: 14px;
+  font-size: 13px;
+  color: #8da2c4;
+  transition: color 0.16s ease;
+}
+
+.student-subnav-label {
+  white-space: nowrap;
+}
+
+/* Connector Dot on the vertical line */
+.student-tree-dot {
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #25467d;
+  transition: all 0.16s ease;
+  z-index: 2;
+}
+
+/* Sub-nav Hover */
+.student-subnav-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+.student-subnav-link:hover .student-subnav-icon {
+  color: #ffffff;
+}
+
+/* Active Sub-nav Item (Solid Blue Pill + White Dot) */
+.student-subnav-link-active {
+  background: #1565f5 !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(21, 101, 245, 0.4);
+}
+
+.student-subnav-link-active .student-subnav-icon {
+  color: #ffffff !important;
+}
+
+.tree-dot-active {
+  background: #ffffff !important;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.95);
+  width: 7px;
+  height: 7px;
+}
+
+/* =========================================================
+   5. SIDEBAR FOOTER (Anchored Logout)
+   ========================================================= */
+
+.student-sidebar-footer {
+  padding: 16px;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  position: relative;
+  z-index: 1;
+}
+
+.student-logout-button {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  color: #93a7c6;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  box-sizing: border-box;
+}
+
+.student-logout-button svg {
+  width: 15px;
+  font-size: 14px;
+}
+
+.student-logout-button:hover {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.35);
+  color: #fca5a5;
+}
+
+/* =========================================================
+   6. MAIN CONTENT & TOP HEADER
+   ========================================================= */
+
+.student-main {
+  width: calc(100% - 250px);
+  min-height: 100vh;
+  margin-left: 250px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.student-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 28px;
+  border-bottom: 1px solid #e8edf3;
+  background: #ffffff;
+}
+
+.student-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Topbar Right Area */
+.student-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
+
+/* Student Profile Summary Pill */
+.student-profile-summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 30px;
+  background: #ffffff;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  max-width: 320px;
+}
+
+.student-profile-summary:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.student-avatar-generic {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #0f172a;
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  flex-shrink: 0;
+}
+
+.student-profile-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.student-profile-text strong {
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.student-profile-text small {
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.student-profile-chevron {
+  color: #94a3b8;
+  font-size: 11px;
+  margin-left: 2px;
+  flex-shrink: 0;
+}
+
+/* Page Content */
+.student-content {
+  width: 100%;
+  max-width: 1500px;
+  min-height: calc(100vh - 70px);
+  margin: 0 auto;
+  padding: 24px 28px;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+/* Mobile Toggle Hamburger */
+.student-mobile-menu {
+  display: none;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e1e7ef;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #475569;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease;
+}
+
+.student-mobile-menu:hover {
+  background: #f5f7fa;
+  border-color: #cfd8e3;
+}
+
+.student-sidebar-overlay {
+  display: none;
+}
+
+/* =========================================================
+   7. RESPONSIVE MEDIA QUERIES
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .student-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.22s ease;
+  }
+
+  .student-sidebar.student-sidebar-open {
+    transform: translateX(0);
+  }
+
+  .student-sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    display: block;
+    border: 0;
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(2px);
+    cursor: pointer;
+  }
+
+  .student-main {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .student-mobile-menu {
+    display: flex;
+  }
+
+}
+
+@media (max-width: 650px) {
+  .student-topbar {
+    min-height: 64px;
+    padding: 0 16px;
+  }
+
+  .student-content {
+    min-height: calc(100vh - 64px);
+    padding: 18px 16px;
+  }
+
+  .student-profile-text {
+    display: none;
+  }
+
+  .student-avatar-generic {
+    width: 33px;
+    height: 33px;
+  }
+}

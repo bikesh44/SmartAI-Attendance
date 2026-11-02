@@ -1,0 +1,1258 @@
+/* ==========================================================================
+   Student Dashboard Styles - Clean, Compact & Robust Layout
+   ========================================================================== */
+
+.student-dashboard-wrapper {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  color: #1e293b;
+}
+
+/* ==========================================================================
+   1. Hero Welcome Banner
+   ========================================================================== */
+
+.student-hero-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 140px;
+  min-height: 140px;
+  max-height: 140px;
+  padding: 0 0 0 28px;
+  background: linear-gradient(135deg, #06193d 0%, #0d2f6d 50%, #174aa3 100%);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(13, 47, 109, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.student-hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 2;
+  min-width: 0;
+  flex: 1;
+}
+
+.student-hero-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.4px;
+  line-height: 1.25;
+}
+
+.student-hero-subtitle {
+  margin: 0 0 4px 0;
+  font-size: 13px;
+  font-weight: 400;
+  color: #c7dbf8;
+  line-height: 1.4;
+}
+
+.student-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 5px 13px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 30px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.student-hero-right {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.student-hero-image-wrap {
+  width: 380px;
+  height: 140px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.student-hero-banner-img {
+  width: 100%;
+  height: 100%;
+  max-height: 140px;
+  object-fit: cover;
+  object-position: center;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.15) 15%, rgba(0, 0, 0, 0.85) 45%, #000000 70%, #000000 100%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.15) 15%, rgba(0, 0, 0, 0.85) 45%, #000000 70%, #000000 100%);
+}
+
+/* ==========================================================================
+   2. Top 4 Metric Stat Cards (Soft Pastel with Watermark Overlay)
+   ========================================================================== */
+
+.student-stat-cards-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.student-stat-cards-row .student-stat-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 148px;
+  min-height: 148px;
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  cursor: pointer;
+  transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.32s cubic-bezier(0.34, 1.56, 0.64, 1),
+              border-color 0.25s ease;
+}
+
+/* Background image wrapper positioned on the right half */
+.student-card-bg-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 58%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.25) 15%, rgba(0, 0, 0, 0.85) 45%, #000000 70%, #000000 100%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.25) 15%, rgba(0, 0, 0, 0.85) 45%, #000000 70%, #000000 100%);
+}
+
+.student-card-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0.92;
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s ease;
+  will-change: transform;
+}
+
+/* Card 1 position: highlight library books */
+.student-card-blue .student-card-bg-img {
+  object-position: 85% center;
+}
+
+/* Card 2 position: highlight lecture hall */
+.student-card-green .student-card-bg-img {
+  object-position: center center;
+}
+
+/* Card 3 position: highlight study notebook & glasses */
+.student-card-red .student-card-bg-img {
+  object-position: center center;
+}
+
+/* Card 4 position: highlight 3D books */
+.student-card-purple .student-card-bg-img {
+  object-position: center center;
+}
+
+/* Gradient overlay across the entire card */
+.student-card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* 1. Overall Attendance Card (Blue) */
+.student-card-blue {
+  background-color: #f0f7ff;
+  border-color: #dbeafe;
+}
+.student-card-blue .student-card-overlay {
+  background: linear-gradient(
+    90deg,
+    #f0f7ff 0%,
+    #f0f7ff 38%,
+    rgba(240, 247, 255, 0.88) 52%,
+    rgba(240, 247, 255, 0.35) 75%,
+    rgba(240, 247, 255, 0.05) 100%
+  );
+}
+.student-card-blue:hover {
+  border-color: #60a5fa;
+  box-shadow: 0 16px 32px -4px rgba(59, 130, 246, 0.26),
+              0 6px 14px -2px rgba(59, 130, 246, 0.15);
+}
+
+/* 2. Classes Attended Card (Green) */
+.student-card-green {
+  background-color: #f0fdf4;
+  border-color: #bbf7d0;
+}
+.student-card-green .student-card-overlay {
+  background: linear-gradient(
+    90deg,
+    #f0fdf4 0%,
+    #f0fdf4 38%,
+    rgba(240, 253, 244, 0.88) 52%,
+    rgba(240, 253, 244, 0.35) 75%,
+    rgba(240, 253, 244, 0.05) 100%
+  );
+}
+.student-card-green:hover {
+  border-color: #4ade80;
+  box-shadow: 0 16px 32px -4px rgba(16, 185, 129, 0.26),
+              0 6px 14px -2px rgba(16, 185, 129, 0.15);
+}
+
+/* 3. Classes Missed Card (Red/Pink) */
+.student-card-red {
+  background-color: #fff1f2;
+  border-color: #fecdd3;
+}
+.student-card-red .student-card-overlay {
+  background: linear-gradient(
+    90deg,
+    #fff1f2 0%,
+    #fff1f2 38%,
+    rgba(255, 241, 242, 0.88) 52%,
+    rgba(255, 241, 242, 0.35) 75%,
+    rgba(255, 241, 242, 0.05) 100%
+  );
+}
+.student-card-red:hover {
+  border-color: #fb7185;
+  box-shadow: 0 16px 32px -4px rgba(244, 63, 94, 0.26),
+              0 6px 14px -2px rgba(244, 63, 94, 0.15);
+}
+
+/* 4. Enrolled Courses Card (Purple) */
+.student-card-purple {
+  background-color: #f5f3ff;
+  border-color: #e9d5ff;
+}
+.student-card-purple .student-card-overlay {
+  background: linear-gradient(
+    90deg,
+    #f5f3ff 0%,
+    #f5f3ff 38%,
+    rgba(245, 243, 255, 0.88) 52%,
+    rgba(245, 243, 255, 0.35) 75%,
+    rgba(245, 243, 255, 0.05) 100%
+  );
+}
+.student-card-purple:hover {
+  border-color: #a78bfa;
+  box-shadow: 0 16px 32px -4px rgba(139, 92, 246, 0.26),
+              0 6px 14px -2px rgba(139, 92, 246, 0.15);
+}
+
+/* Hover effects for all 4 cards */
+.student-stat-cards-row .student-stat-card:hover {
+  transform: translateY(-6px);
+}
+
+.student-stat-cards-row .student-stat-card:hover .student-card-bg-img {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+.student-stat-cards-row .student-stat-card:hover .student-card-icon-badge {
+  transform: scale(1.12) rotate(-3deg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+}
+
+.student-card-inner {
+  position: relative;
+  z-index: 3;
+  padding: 18px 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.student-card-icon-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.blue-badge {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+.green-badge {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.red-badge {
+  background: #f43f5e;
+  color: #ffffff;
+}
+
+.purple-badge {
+  background: #8b5cf6;
+  color: #ffffff;
+}
+
+.student-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.student-card-label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.student-card-metric-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.student-card-value {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+}
+
+.student-card-trend-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2.5px 8px;
+  border-radius: 12px;
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+.green-trend {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.red-trend {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.student-card-footer {
+  margin: 2px 0 0 0;
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 400;
+}
+
+.student-api-alert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: #fef2f2;
+  border: 1px solid #fecdd3;
+  color: #b91c1c;
+  border-radius: 10px;
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
+.student-api-pending {
+  font-size: 13px;
+  font-weight: 600;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.student-api-pending-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 7px;
+  border-radius: 12px;
+  font-size: 10.5px;
+  font-weight: 600;
+  background: #f1f5f9;
+  color: #64748b;
+  font-style: italic;
+}
+
+.student-empty-trend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+  color: #94a3b8;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.callout-pending {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.callout-pending .callout-text {
+  color: #64748b;
+  font-style: italic;
+}
+
+/* ==========================================================================
+   3. Middle Section (Grid)
+   ========================================================================== */
+
+.student-middle-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1.15fr 0.8fr;
+  gap: 16px;
+}
+
+.student-panel {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              border-color 0.25s ease;
+}
+
+.student-panel:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px -4px rgba(15, 23, 42, 0.08), 0 4px 10px rgba(15, 23, 42, 0.03);
+  border-color: #cbd5e1;
+}
+
+.student-panel-header {
+  padding: 14px 18px;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+}
+
+.student-panel-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.student-panel-title-wrap h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.2px;
+}
+
+.student-panel-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+}
+
+.blue-icon {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.student-filter-select {
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  padding: 4px 10px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #334155;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.student-filter-select:hover {
+  border-color: #94a3b8;
+}
+
+.student-panel-date {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+/* Attendance Trend Card */
+.student-trend-content {
+  display: grid;
+  grid-template-columns: 1fr 140px;
+  gap: 16px;
+  padding: 16px 18px;
+  align-items: center;
+  height: 100%;
+}
+
+.student-trend-chart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.student-chart-svg-wrap {
+  position: relative;
+  width: 100%;
+  height: 155px;
+}
+
+.student-trend-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.student-grid-line {
+  stroke: #f1f5f9;
+  stroke-width: 1;
+}
+
+.student-y-axis-label {
+  font-size: 10px;
+  fill: #94a3b8;
+  font-weight: 500;
+  font-family: inherit;
+}
+
+.student-chart-point {
+  fill: #2563eb;
+  stroke: #ffffff;
+  stroke-width: 2.2;
+  transition: r 0.15s ease;
+  cursor: pointer;
+}
+
+.student-chart-point-hitbox {
+  fill: transparent;
+  cursor: pointer;
+}
+
+.student-chart-point-group:hover .student-chart-point {
+  r: 6;
+  fill: #1d4ed8;
+}
+
+.student-chart-tooltip {
+  position: absolute;
+  transform: translate(-50%, -120%);
+  background: #0f172a;
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  pointer-events: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.student-chart-tooltip small {
+  color: #94a3b8;
+  font-size: 9.5px;
+}
+
+.student-x-axis-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.student-x-axis-label {
+  font-size: 10.5px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.student-chart-legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #64748b;
+  padding: 4px 0 0 10px;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2563eb;
+}
+
+/* Trend Card Sidebar */
+.student-trend-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.student-trend-current {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.trend-current-label {
+  font-size: 11.5px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.trend-current-val-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.trend-current-val {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.trend-current-sub {
+  font-size: 10.5px;
+  color: #94a3b8;
+}
+
+.student-status-callout {
+  padding: 10px 12px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.callout-good {
+  background: #fefce8;
+  border: 1px solid #fef08a;
+}
+
+.callout-warning {
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+}
+
+.callout-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #854d0e;
+}
+
+.callout-warning .callout-header {
+  color: #9f1239;
+}
+
+.callout-text {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.35;
+  color: #713f12;
+}
+
+.callout-warning .callout-text {
+  color: #881337;
+}
+
+/* Today's Schedule Card */
+.student-schedule-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-schedule-list {
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow: visible;
+}
+
+.student-schedule-item {
+  display: grid;
+  grid-template-columns: 115px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  border-bottom: 1px solid #f8fafc;
+  transition: background 0.15s ease;
+}
+
+.student-schedule-item:hover {
+  background: #f8fafc;
+}
+
+.student-schedule-time {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.student-schedule-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.student-schedule-subject {
+  margin: 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.student-schedule-meta {
+  margin: 0;
+  font-size: 11px;
+  color: #64748b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.schedule-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2.5px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.schedule-badge.completed {
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+.schedule-badge.ongoing {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2563eb;
+  animation: pulseAnimation 1.5s infinite;
+}
+
+@keyframes pulseAnimation {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+}
+
+.schedule-badge.upcoming {
+  background: #f8fafc;
+  color: #64748b;
+  border: 1px solid #cbd5e1;
+}
+
+.student-schedule-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 28px 12px;
+  color: #64748b;
+}
+
+.student-schedule-empty .empty-icon {
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+.student-schedule-empty p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 13px;
+  color: #334155;
+}
+
+.student-schedule-empty span {
+  font-size: 11.5px;
+  color: #94a3b8;
+}
+
+/* Quick Actions Card */
+.student-quick-actions-list {
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.student-action-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 12px;
+  border: 1px solid #f1f5f9;
+  border-radius: 10px;
+  background: #ffffff;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: all 0.18s ease;
+}
+
+.student-action-item:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  transform: translateX(3px);
+}
+
+.action-icon-wrap {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.blue-action {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.green-action {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.purple-action {
+  background: #f5f3ff;
+  color: #7c3aed;
+}
+
+.red-action {
+  background: #fff1f2;
+  color: #e11d48;
+}
+
+.action-copy {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.action-copy strong {
+  font-size: 12.5px;
+  color: #0f172a;
+  font-weight: 650;
+}
+
+.action-copy span {
+  font-size: 11px;
+  color: #64748b;
+}
+
+.action-arrow {
+  color: #94a3b8;
+  transition: transform 0.15s ease;
+}
+
+.student-action-item:hover .action-arrow {
+  color: #2563eb;
+  transform: translateX(2px);
+}
+
+/* ==========================================================================
+   4. Bottom Section (Grid)
+   ========================================================================== */
+
+.student-bottom-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1.15fr 0.8fr;
+  gap: 16px;
+}
+
+.student-view-all-btn {
+  background: transparent;
+  border: 0;
+  color: #2563eb;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s ease;
+}
+
+.student-view-all-btn:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.student-table-container {
+  overflow-x: hidden;
+  padding: 0;
+  width: 100%;
+}
+
+.student-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 12px;
+}
+
+.student-table th {
+  padding: 10px 12px;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 11px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.student-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+.student-table tr:last-child td {
+  border-bottom: none;
+}
+
+.student-table tr:hover td {
+  background: #fbfcfe;
+}
+
+.code-cell {
+  font-weight: 600;
+  color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.name-cell {
+  font-weight: 600;
+  color: #1e293b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.faculty-cell {
+  color: #64748b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.progress-cell-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.progress-num {
+  font-weight: 700;
+  color: #0f172a;
+  min-width: 30px;
+}
+
+.mini-progress-bar {
+  flex: 1;
+  max-width: 50px;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.mini-progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+
+.fill-green {
+  background: #10b981;
+}
+
+.fill-amber {
+  background: #f59e0b;
+}
+
+.date-cell {
+  color: #64748b;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.subject-cell {
+  font-weight: 600;
+  color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 2.5px 9px;
+  border-radius: 14px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.pill-present {
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+.pill-absent {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecdd3;
+}
+
+.student-table-empty {
+  text-align: center;
+  padding: 24px 16px;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+/* Motivation Card - Wraps entire card with scenic background */
+.student-motivation-card {
+  position: relative;
+  border: 1px solid #1e3a70;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(10, 25, 60, 0.22);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 280px;
+  height: 100%;
+  padding: 24px;
+  background-color: #061533;
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              border-color 0.3s ease;
+}
+
+.student-motivation-card:hover {
+  transform: translateY(-6px);
+  border-color: #60a5fa;
+  box-shadow: 0 20px 38px -4px rgba(6, 21, 51, 0.45),
+              0 0 25px rgba(59, 130, 246, 0.3);
+}
+
+.motivation-bg-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.motivation-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right bottom;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform;
+}
+
+.student-motivation-card:hover .motivation-bg-img {
+  transform: scale(1.06);
+}
+
+.motivation-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 21, 51, 0.82) 0%,
+    rgba(6, 21, 51, 0.42) 45%,
+    rgba(6, 21, 51, 0.08) 70%,
+    rgba(6, 21, 51, 0.45) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.motivation-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 86%;
+  margin: 0;
+}
+
+.motivation-icon-ring {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
+}
+
+.student-motivation-card:hover .motivation-icon-ring {
+  transform: scale(1.1) rotate(-4deg);
+  border-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.45);
+}
+
+.motivation-icon {
+  color: #ffffff;
+}
+
+.motivation-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+  letter-spacing: -0.3px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.motivation-sub {
+  margin: 0;
+  font-size: 12px;
+  color: #cbd5e1;
+  line-height: 1.45;
+  font-weight: 400;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .student-middle-grid,
+  .student-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .student-stat-cards-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .student-hero-banner {
+    height: auto;
+    max-height: none;
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .student-hero-image-wrap {
+    width: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .student-stat-cards-row {
+    grid-template-columns: 1fr;
+  }
+
+  .student-hero-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .student-hero-image-wrap {
+    display: none;
+  }
+
+  .student-trend-content {
+    grid-template-columns: 1fr;
+  }
+}

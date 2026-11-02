@@ -1,0 +1,77 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+backend/.venv/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+
+# Local authentication cookies
+backend/cookies.txt
+backend/faculty-cookies.txt
+backend/student-cookies.txt
+
+# Computer Vision models
+.cv-models/
+
+# VS Code workspace settings
+.vscode/
+
+# Local test credentials and session data
+/admin-cookies.txt
+/faculty-cookies.txt
+/login.json
+/faculty.json
+/faculty-login.json
+/student-user.json
+/session.json
+
+/backend/enrollment.json
+/backend/student-profile.json
+/backend/faculty-profile.json
+/backend/student-user.json
+/backend/faculty-login.json
+/backend/session.json
+
+# Local backup files
+*.py.bak
+
+
+# Virtual environments
+.venv/
+venv/
+
+# Database backups and local data
+backups/
+*.sql
+*.dump
+
+# Private keys and certificates
+*.key
+*.pem
+!backend/certs/ca.pem
+# Local student uploads and personal files
+/backend/uploads/
+/database_backups/
+/backend/student_details.xlsx
+
+# Local academic project report - do not include in student repository
+/project_report/
+
+# Frontend dependencies and build output
+frontend/node_modules/
+frontend/dist/
+
+# Additional environment files
+**/.env
+**/.env.*
+!**/.env.example
+
+# Local Excel data files
+backend/*.xlsx
+data/*.xlsx

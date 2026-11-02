@@ -1,0 +1,381 @@
+/* =========================================================
+   Edit Timetable Modal Stylesheet
+   SAMS-FR Design System Compliant
+   ========================================================= */
+
+.edit-timetable-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: editModalFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes editModalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.edit-timetable-dialog-box {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.28), 0 0 0 1px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  max-width: 540px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 1px solid #e2e8f0;
+  animation: editModalBoxIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes editModalBoxIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Header */
+.edit-timetable-dialog-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid #f1f5f9;
+  background: #ffffff;
+  border-radius: 18px 18px 0 0;
+}
+
+.edit-timetable-header-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.edit-timetable-header-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  color: #005fb8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  border: 1px solid #bfdbfe;
+}
+
+.edit-timetable-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.edit-timetable-title-row h2 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+}
+
+.edit-timetable-header-left p {
+  margin: 4px 0 0;
+  font-size: 12.5px;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.edit-timetable-status-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+}
+
+.edit-timetable-status-badge.is-persisted {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.edit-timetable-status-badge.is-extracted {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.edit-timetable-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  line-height: 1;
+  transition: all 0.15s ease;
+}
+
+.edit-timetable-close-btn:hover:not(:disabled) {
+  color: #0f172a;
+  background: #f1f5f9;
+}
+
+/* Context Information Card */
+.edit-timetable-context-card {
+  margin: 16px 24px 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edit-timetable-context-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.edit-timetable-context-icon {
+  color: #005fb8;
+  font-size: 14px;
+  width: 16px;
+  flex-shrink: 0;
+}
+
+.edit-timetable-context-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  color: #1e293b;
+}
+
+.edit-timetable-context-text .context-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+  margin-bottom: 1px;
+}
+
+.edit-timetable-context-text strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.edit-timetable-context-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding-top: 6px;
+  border-top: 1px solid #edf2f7;
+}
+
+.edit-timetable-context-footer {
+  padding-top: 4px;
+  border-top: 1px solid #edf2f7;
+  color: #64748b;
+  font-size: 11.5px;
+}
+
+/* Alert */
+.edit-timetable-alert {
+  margin: 14px 24px 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.edit-timetable-alert.is-error {
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #be123c;
+}
+
+.edit-timetable-alert .alert-icon {
+  font-size: 15px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  color: #e11d48;
+}
+
+/* Form */
+.edit-timetable-form {
+  padding: 18px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.edit-timetable-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.edit-timetable-field-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.edit-timetable-field-group label svg {
+  color: #005fb8;
+  font-size: 13px;
+}
+
+.edit-timetable-field-group select,
+.edit-timetable-field-group input {
+  padding: 10px 14px;
+  border-radius: 9px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 14px;
+  font-family: inherit;
+  transition: all 0.15s ease;
+  outline: none;
+}
+
+.edit-timetable-field-group select:focus,
+.edit-timetable-field-group input:focus {
+  border-color: #005fb8;
+  box-shadow: 0 0 0 3px rgba(0, 95, 184, 0.15);
+}
+
+.edit-timetable-field-group select.has-error,
+.edit-timetable-field-group input.has-error {
+  border-color: #e11d48;
+  background: #fffafb;
+}
+
+.edit-timetable-field-group select.has-error:focus,
+.edit-timetable-field-group input.has-error:focus {
+  border-color: #be123c;
+  box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.15);
+}
+
+.edit-timetable-error-text {
+  font-size: 12px;
+  color: #be123c;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.edit-timetable-field-hint {
+  font-size: 11.5px;
+  color: #64748b;
+  line-height: 1.35;
+}
+
+.edit-timetable-time-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* Footer / Actions */
+.edit-timetable-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.edit-timetable-btn-cancel {
+  padding: 10px 18px;
+  border-radius: 9px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #475569;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.edit-timetable-btn-cancel:hover:not(:disabled) {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+.edit-timetable-btn-save {
+  padding: 10px 22px;
+  border-radius: 9px;
+  border: none;
+  background: linear-gradient(135deg, #005fb8 0%, #004b93 100%);
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(0, 95, 184, 0.22);
+  transition: all 0.15s ease;
+}
+
+.edit-timetable-btn-save:hover:not(:disabled) {
+  background: linear-gradient(135deg, #006dd4 0%, #0055a6 100%);
+  box-shadow: 0 6px 14px rgba(0, 95, 184, 0.32);
+  transform: translateY(-1px);
+}
+
+.edit-timetable-btn-save:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 95, 184, 0.25);
+}
+
+.edit-timetable-btn-save:disabled,
+.edit-timetable-btn-cancel:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 580px) {
+  .edit-timetable-time-row,
+  .edit-timetable-context-grid {
+    grid-template-columns: 1fr;
+  }
+}

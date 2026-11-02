@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #10233f;
+  background: #f4f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --admin-page-bg: #f4f8fc;
+  --admin-surface: #ffffff;
+  --admin-surface-soft: #fafcff;
+  --admin-border: #dfe7f1;
+  --admin-border-soft: #edf1f6;
+  --admin-text: #172033;
+  --admin-text-secondary: #71809a;
+  --admin-text-muted: #8996a9;
+}
+
+:root[data-theme="dark"] {
+  --admin-page-bg: #101722;
+  --admin-surface: #172131;
+  --admin-surface-soft: #1c2838;
+  --admin-border: #2a394d;
+  --admin-border-soft: #263548;
+  --admin-text: #edf3fb;
+  --admin-text-secondary: #aab8ca;
+  --admin-text-muted: #8392a7;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #f4f7fb;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #f4f7fb;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}

@@ -1,0 +1,55 @@
+.page-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 220px;
+  padding: 32px;
+  border: 1px dashed #d7e0eb;
+  border-radius: 12px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.page-state-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  background: #eef2f7;
+  color: #65738a;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.page-state h2 {
+  margin: 0;
+  color: #263248;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 17px;
+}
+
+.page-state p {
+  max-width: 520px;
+  margin: 7px 0 0;
+  color: #8994a5;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.page-state-error {
+  border-color: #e4caca;
+  background: #fffafa;
+}
+
+.page-state-error .page-state-icon {
+  background: #f8eaea;
+  color: #a34b4b;
+}
+
+.page-state-loading {
+  border-style: solid;
+  background: #fafbfd;
+}
